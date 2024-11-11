@@ -7,6 +7,8 @@ import productStringGenerator from "./helpers/productStringGenerator.js";
 import priceString from "./helpers/priceString.js";
 import tvScreenSizeString from "./helpers/tvScreenSizeString.js";
 import optionsCheckOrMinus from "./helpers/optionsCheckOrMinus.js";
+import checkIcon from './assets/check.png';
+import notIcon from './assets/minus.png';
 
 function App() {
 
@@ -52,7 +54,9 @@ function App() {
                             <h3>{productStringGenerator(bestSellingTv)}</h3>
                             <h2>{priceString(bestSellingTv)}</h2>
                             <p>{tvScreenSizeString(bestSellingTv)}</p>
-                            <p>[check-icon] wifi [not-icon] speech [check-icon] hdr [check-icon] bluetooth [not-icon] ambilight</p>
+                            <p>
+                                <img className="options-icon" src={checkIcon} alt="yes"/> wifi <img className="options-icon" src={notIcon} alt="no"/> speech <img className="options-icon" src={checkIcon} alt="yes"/> hdr <img className="options-icon" src={checkIcon} alt="yes"/> bluetooth <img className="options-icon" src={notIcon} alt="no"/> ambilight
+                            </p>
                             <p>{optionsCheckOrMinus(bestSellingTv)}</p> {/*Ik heb een helper functie gemaakt voor het ophalen van alle opties*/}
                         </div>
                     </section>
