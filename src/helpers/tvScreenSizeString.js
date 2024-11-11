@@ -1,10 +1,10 @@
-function tvScreenSizeString(tvArray) {
+function tvScreenSizeString(tv) {
     let sizeString = '';
-    for (let i = 0; i < tvArray[1].length; i++) {
-        sizeString = sizeString + tvArray[1].size[i] + '|'
+    for (let i = 0; i < tv.availableSizes.length; i++) {
+        sizeString = sizeString + tv.availableSizes[i] + ' inch (' + (tv.availableSizes[i]*2.54).toFixed(0) + ' cm) | '
     }
-    console.log(sizeString)
-    return sizeString
+    sizeString = sizeString.slice(0, -3);
+    return sizeString;
 }
 
 export default tvScreenSizeString;

@@ -1,5 +1,5 @@
-function priceString(price) {
-    return `\u20AC${price},-`
+function priceString(tv) {
+    return `\u20AC${tv.price},-`;
 }
 
 export default priceString;

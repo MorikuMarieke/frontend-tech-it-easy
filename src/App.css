@@ -1,11 +1,153 @@
-.sellAmountProducts {
-    color: seagreen;
+
+/*////////////////////////
+
+    Table of Contents
+    1. Global Styles
+    2. Typography
+    3. Layout
+        3.1 Reusables
+        3.2 Other
+    4. Areas
+        4.1 Header
+        4.2 Introduction
+        etc.
+    5. Media Queries
+////////////////////////*/
+
+/* ------------------------------- 1. Global Styles -------------------------------- */
+:root {
+    --green: #2d9f92;
+    --green-bg: #effbf9;
+    --blue: #6e9db0;
+    --blue-bg: #f0f6f9;
+    --red: #e24c29;
+    --red-bg: #fcefed;
+    }
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.buyAmountProducts {
-    color: royalblue;
+.check,
+.min {
+    width: 0.8em;
+    display: inline;
 }
 
-.currentStockTotal {
-    color: indianred;
+/* ------------------------------- 2. Typography -------------------------------- */
+
+.info-block p {
+    font-size: 2em;
 }
+
+h2 {
+    padding: 1em 0;
+}
+
+/* ------------------------------- 3. Layout -------------------------------- */
+
+.outer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+}
+
+.inner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 0 1 1200px;
+    text-align: left;
+    margin: 0 2em;
+}
+
+/* ------------------------------- 4. Areas -------------------------------- */
+
+/*----------------------- 4.1 Header -----------------------*/
+
+
+/*----------------------- 4.2 Sales Display -----------------------*/
+
+.stock-overview-container {
+    width: 100%;
+}
+
+.stock-overview {
+    display: flex;
+    flex: 1 1 100%;
+    justify-content: space-between;
+    gap: 1em;
+    margin: 0 0 1em 0
+}
+
+.info-block {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 300px;
+    min-height: 200px;
+    border-radius: 0.5em;
+    text-align: center;
+    justify-content: space-between;
+    padding: 2em;
+}
+
+.sell-amount {
+    border: var(--green) solid 0.15em;
+    color: var(--green);
+    background-color: var(--green-bg);
+}
+
+.buy-amount {
+    border: var(--blue) solid 0.15em;
+    color: var(--blue);
+    background-color: var(--blue-bg);
+}
+
+.stock-amount {
+    border: var(--red) solid 0.15em;
+    color: var(--red);
+    background-color: var(--red-bg);
+}
+
+.button-block {
+    display: flex;
+    margin-bottom: 1em;
+    column-gap: 0.5em;
+
+}
+
+.button-block button {
+    padding: 0.1em 0.5em;
+}
+
+/*----------------------- 4.3 Product Display -----------------------*/
+
+/*--------------- 4.3.1 Best product ---------------*/
+.product-block {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: black dashed 0.15em;
+    border-radius: 0.5em;
+    padding: 2em;
+    background-color: #ECECEC;
+}
+
+.image-wrapper {
+    padding-right: 2em;
+    width: 30%;
+
+}
+
+.image-wrapper img {
+    width: 100%;
+}
+
+/*--------------- 4.3.2 Other products ---------------*/
+
+
+/* ------------------------------- 5. Media Queries -------------------------------- */
+

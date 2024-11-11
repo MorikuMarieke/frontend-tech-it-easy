@@ -6,21 +6,83 @@ import currentStockTotal from "./helpers/currentStockTotal.js";
 import productStringGenerator from "./helpers/productStringGenerator.js";
 import priceString from "./helpers/priceString.js";
 import tvScreenSizeString from "./helpers/tvScreenSizeString.js";
+import optionsCheckOrMinus from "./helpers/optionsCheckOrMinus.js";
 
 function App() {
-  return (
-      <div>
-          <h1>Begin hier met met maken van de applicatie!</h1>
-          <p>Marieke</p>
-          <p>{bestSellingTv.type}</p>
-          <p className="sellAmountProducts">Aantal verkochte producten: {sellAmount(inventory)}</p>
-          <p className="buyAmountProducts">Aantal ingekochte producten: {buyAmount(inventory)}</p>
-          <p className="currentStockTotal">Aantal ingekochte producten: {currentStockTotal(inventory)}</p>
-          <p>{productStringGenerator(inventory)}</p>
-          <p>{priceString(145)}</p>
-          <p>{tvScreenSizeString(inventory)}</p>
-      </div>
-  )
+
+    function handleClick(buttonText) {
+        console.log(buttonText)
+    }
+
+    return (
+        <div>
+            <header className="outer-container">
+                <div className="inner-container">
+                    <h1>Tech it easy dashboard</h1>
+                </div>
+            </header>
+
+            <main className="outer-container">
+                <article className="inner-container">
+                    <section className="stock-overview-container">
+                        <h2>Verkoopoverzicht</h2>
+                        <div className="stock-overview">
+                            <div className="info-block sell-amount">
+                                <h3>Aantal verkochte producten</h3>
+                                <p>{sellAmount(inventory)}</p>
+                            </div>
+                            <div className="info-block buy-amount">
+                                <h3>Aantal ingekochte producten</h3>
+                                <p>{buyAmount(inventory)}</p>
+                            </div>
+                            <div className="info-block stock-amount">
+                                <h3>Aantal te verkopen producten</h3>
+                                <p>{currentStockTotal(inventory)}</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <h2>Best verkochte TV</h2>
+
+                    <section className="product-block best-product">
+                        <div className="image-wrapper">
+                            <img src="https://image.coolblue.nl/max/500x500/products/1786196" alt="bestselling tv"/>
+                        </div>
+                        <div>
+                            <h3>{productStringGenerator(bestSellingTv)}</h3>
+                            <h2>{priceString(bestSellingTv)}</h2>
+                            <p>{tvScreenSizeString(bestSellingTv)}</p>
+                            <p>[check-icon] wifi [not-icon] speech [check-icon] hdr [check-icon] bluetooth [not-icon] ambilight</p>
+                            <p>{optionsCheckOrMinus(bestSellingTv)}</p> {/*Ik heb een helper functie gemaakt voor het ophalen van alle opties*/}
+                        </div>
+                    </section>
+
+                    <h2>Alle TV's</h2>
+
+                    <div className="button-block">
+                        <button
+                            className="filter-button"
+                            type="button"
+                            onClick={() => handleClick('Meest verkocht eerst')}>
+                            Meest verkocht eerst
+                        </button>
+                        <button
+                            className="filter-button"
+                            type="button"
+                            onClick={() => handleClick('Goedkoopste eerst')}>
+                            Goedkoopste eerst
+                        </button>
+                        <button
+                            className="filter-button"
+                            type="button"
+                            onClick={() => handleClick('Meest geschikt voor sport eerst')}>
+                            Meest geschikt voor sport eerst
+                        </button>
+                    </div>
+                </article>
+            </main>
+        </div>
+    )
 }
 
 export default App

@@ -3,7 +3,8 @@ function buyAmount(tvArray) {
     for (let i = 0; i < tvArray.length; i++) {
         counter = counter + tvArray[i].originalStock;
     }
-    return counter
+    console.log(counter);
+    return counter;
 }
 
 export default buyAmount;

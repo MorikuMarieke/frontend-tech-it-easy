@@ -1,5 +1,5 @@
-function productStringGenerator(tvArray) {
-    const productString = tvArray[1].brand + ' ' + tvArray[1].type + ' - ' + tvArray[1].name;
+function productStringGenerator(tv) {
+    const productString = tv.brand + ' ' + tv.type + ' - ' + tv.name;
     return productString
 }
 
