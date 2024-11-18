@@ -1,6 +1,5 @@
 function productStringGenerator(tv) {
-    const productString = tv.brand + ' ' + tv.type + ' - ' + tv.name;
-    return productString
+    return `${tv.brand} ${tv.type} - ${tv.name}`
 }
 
 export default productStringGenerator;

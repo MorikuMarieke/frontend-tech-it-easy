@@ -42,8 +42,17 @@
     font-size: 2em;
 }
 
+h1 {
+    font-size: 3em;
+}
+
 h2 {
     padding: 1em 0;
+}
+
+.filter-button {
+    font-family: inherit;
+    font-size: 0.9rem;
 }
 
 /* ------------------------------- 3. Layout -------------------------------- */
@@ -71,7 +80,7 @@ h2 {
 
 /*----------------------- 4.2 Sales Display -----------------------*/
 
-.stock-overview-container {
+.dashboard-container {
     width: 100%;
 }
 
@@ -120,38 +129,64 @@ h2 {
 }
 
 .button-block button {
-    padding: 0.1em 0.5em;
+    padding: 0.6em 1em;
+    border-radius: 0.5em;
 }
 
 /*----------------------- 4.3 Product Display -----------------------*/
 
+
+
 /*--------------- 4.3.1 Best product ---------------*/
-.product-block {
+.best-product {
+    border: black dashed 0.15em;
+    border-radius: 0.5em;
+    background-color: #ECECEC;
+}
+
+.product {
     display: flex;
     align-items: center;
     width: 100%;
-    border: black dashed 0.15em;
-    border-radius: 0.5em;
     padding: 2em;
-    background-color: #ECECEC;
 }
 
 .image-wrapper {
     padding-right: 2em;
     width: 30%;
-
+    height: auto;
+    position: relative;
 }
 
-.image-wrapper img {
+.product-image {
+    display: block;
     width: 100%;
+    height: auto;
 }
 
 .options-icon {
     width: 0.6em;
+    margin: 0 0.5em;
+}
+
+.overlay-image {
+    position: absolute;
+    top: -40px;
+    left: 10px;
+    width: 80%;
+    height: auto;
 }
 
 /*--------------- 4.3.2 Other products ---------------*/
 
+.product ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+.product li {
+    list-style: none;
+}
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
 

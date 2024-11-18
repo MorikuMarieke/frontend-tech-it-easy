@@ -1,11 +1,10 @@
 import buyAmount from "./buyAmount.js";
-import {inventory} from "../constants/inventory.js";
 import sellAmount from "./sellAmount.js";
 
 function currentStockTotal(tvArray) {
 
-    const currentStock = buyAmount(inventory) - sellAmount(inventory);
-    console.log(currentStock);
+    const currentStock = buyAmount(tvArray) - sellAmount(tvArray);
+    // console.log(currentStock);
     return currentStock;
 }
 
